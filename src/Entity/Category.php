@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,9 +36,23 @@ class Category
      */
     private $childs;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="category")
+     */
+    private $products;
+
     public function __construct()
     {
         $this->childs = new ArrayCollection();
+        $this->products = new ArrayCollection();
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId()
@@ -60,7 +75,7 @@ class Category
     /**
      * @return Category
      */
-    public function getParent(): Category
+    public function getParent(): ?Category
     {
         return $this->parent;
     }
@@ -68,7 +83,7 @@ class Category
     /**
      * @param Category $parent
      */
-    public function setParent(Category $parent): void
+    public function setParent(Category $parent = null): void
     {
         $this->parent = $parent;
     }
@@ -95,5 +110,36 @@ class Category
     public function addChild(Category $category)
     {
         $this->childs->add($category);
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+
+    public function addProduct(Product $product): self
+    {
+        if (!$this->products->contains($product)) {
+            $this->products[] = $product;
+            $product->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product): self
+    {
+        if ($this->products->contains($product)) {
+            $this->products->removeElement($product);
+            // set the owning side to null (unless already changed)
+            if ($product->getCategory() === $this) {
+                $product->setCategory(null);
+            }
+        }
+
+        return $this;
     }
 }

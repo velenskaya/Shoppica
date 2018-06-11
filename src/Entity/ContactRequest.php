@@ -7,7 +7,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContactRequestRepository")
- * @
+ * Анотация нужна что бы сказать доктрине что тут есть события
+ * @ORM\HasLifecycleCallbacks()
  */
 class ContactRequest
 {
@@ -31,11 +32,11 @@ class ContactRequest
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=12)
+     * @ORM\Column(type="string", length=12, name="phone_number")
      * @Assert\Length(min="10", max="12")
      *
      */
-    private $phone_number;
+    private $phoneNumber;
 
     /**
      * @ORM\Column(type="text")
@@ -45,9 +46,9 @@ class ContactRequest
 
     /**
      * @var \DateTime
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", name="created_at")
      */
-    private $created_at;
+    private $createdAt;
 
     public function getId()
     {
@@ -80,12 +81,12 @@ class ContactRequest
 
     public function getPhoneNumber(): ?string
     {
-        return $this->phone_number;
+        return $this->phoneNumber;
     }
 
     public function setPhoneNumber(string $phone_number): self
     {
-        $this->phone_number = $phone_number;
+        $this->phoneNumber = $phone_number;
 
         return $this;
     }
@@ -106,37 +107,25 @@ class ContactRequest
     /**
      * @return \DateTime
      */
-
     public function getCreatedAt(): \DateTime
     {
-        return $this->created_at;
+        return $this->createdAt;
     }
 
-    /**
-     * @param \DateTime $created_at
-     */
-
-    public function setCreatedAt(\DateTimeInterface $created_at): void
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
-        $this->created_at = $created_at;
+        $this->createdAt = $createdAt;
 
         return $this;
     }
-//этот кусочек тупо из блога забрала
+
     /**
+     * Метод который сработает при наступления события создания новой записи перед сохранием в базу
      * @ORM\PrePersist()
      */
     public function initSaveCreatedAt()
     {
-        $this->created_at = new \DateTime();
-    }
-
-    /**
-     * @Assert\IsTrue(payload="email")
-     * @return bool
-     */
-    public function isRequiredFieldNotEmpty()
-    {
-        return $this->getEmail() || $this->getPhoneNumber();
+        // записываем дату создания записи как текущую
+        $this->createdAt = new \DateTime();
     }
 }
