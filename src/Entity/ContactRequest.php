@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContactRequestRepository")
- * Анотация нужна что бы сказать доктрине что тут есть события
+ * Анотация нужна что бы сказать доктрине что тут есть событиz
  * @ORM\HasLifecycleCallbacks()
  */
 class ContactRequest
@@ -120,7 +120,7 @@ class ContactRequest
     }
 
     /**
-     * Метод который сработает при наступления события создания новой записи перед сохранием в базу
+     * Метод, который сработает при наступления события создания новой записи перед сохранием в базу
      * @ORM\PrePersist()
      */
     public function initSaveCreatedAt()
