@@ -41,10 +41,16 @@ class Category
      */
     private $products;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Brand", mappedBy="name")
+     */
+    private $brands;
+
     public function __construct()
     {
         $this->childs = new ArrayCollection();
         $this->products = new ArrayCollection();
+        $this->brands = new ArrayCollection();
     }
 
     /**
@@ -138,6 +144,34 @@ class Category
             if ($product->getCategory() === $this) {
                 $product->setCategory(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Brand[]
+     */
+    public function getBrands(): Collection
+    {
+        return $this->brands;
+    }
+
+    public function addBrand(Brand $brand): self
+    {
+        if (!$this->brands->contains($brand)) {
+            $this->brands[] = $brand;
+            $brand->addName($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBrand(Brand $brand): self
+    {
+        if ($this->brands->contains($brand)) {
+            $this->brands->removeElement($brand);
+            $brand->removeName($this);
         }
 
         return $this;
