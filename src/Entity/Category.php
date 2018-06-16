@@ -46,6 +46,11 @@ class Category
      */
     private $brands;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
     public function __construct()
     {
         $this->childs = new ArrayCollection();
@@ -173,6 +178,18 @@ class Category
             $this->brands->removeElement($brand);
             $brand->removeName($this);
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

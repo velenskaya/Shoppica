@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7411266-23ca-4229-bb79-b305cf700f88" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/цветастенький шаблон" beforeDir="false" afterPath="$PROJECT_DIR$/цветастенький шаблон" afterDir="false" />
     </list>
@@ -86,7 +87,7 @@
       <file leaf-file-name="Product.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="721">
+            <state relative-caret-position="2641">
               <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
             </state>
           </provider>
@@ -364,12 +365,12 @@
       <workItem from="1528912222018" duration="4256000" />
       <workItem from="1528967243853" duration="2608000" />
       <workItem from="1528989663975" duration="9797000" />
-      <workItem from="1529149195461" duration="3731000" />
+      <workItem from="1529149195461" duration="4304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50055000" />
+    <option name="totallyTimeSpent" value="50628000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1066" extended-state="6" />
@@ -786,7 +787,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="721">
+        <state relative-caret-position="2641">
           <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
         </state>
       </provider>
