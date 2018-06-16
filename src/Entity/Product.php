@@ -57,6 +57,11 @@ class Product
      */
     private $count;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Brand", inversedBy="products")
+     */
+    private $brand;
+
     public function getId()
     {
         return $this->id;
@@ -154,6 +159,18 @@ class Product
     public function setCount(int $count): self
     {
         $this->count = $count;
+
+        return $this;
+    }
+
+    public function getBrand(): ?Brand
+    {
+        return $this->brand;
+    }
+
+    public function setBrand(?Brand $brand): self
+    {
+        $this->brand = $brand;
 
         return $this;
     }
