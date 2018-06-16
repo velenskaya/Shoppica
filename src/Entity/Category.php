@@ -95,7 +95,7 @@ class Category
     }
 
     /**
-     * @return ArrayCollection
+     * @return ArrayCollection|Category[]
      */
     public function getChilds(): ArrayCollection
     {
