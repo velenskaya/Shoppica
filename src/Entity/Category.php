@@ -41,10 +41,11 @@ class Category
      */
     private $products;
 
-    /**
+    /*/**
      * @ORM\ManyToMany(targetEntity="App\Entity\Brand", mappedBy="name")
      */
-    private $brands;
+
+    //private $brands;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -56,7 +57,7 @@ class Category
     {
         $this->childs = new ArrayCollection();
         $this->products = new ArrayCollection();
-        $this->brands = new ArrayCollection();
+        //$this->brands = new ArrayCollection();
     }
 
     /**
@@ -154,10 +155,12 @@ class Category
 
         return $this;
     }
-
+    /*
     /**
      * @return Collection|Brand[]
      */
+
+    /*
     public function getBrands(): Collection
     {
         return $this->brands;
@@ -194,4 +197,5 @@ class Category
 
         return $this;
     }
+    */
 }

@@ -18,19 +18,27 @@ class Brand
      */
     private $id;
 
+    /*
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="brands")
      */
-    private $name;
+    
+    //private $name;
+
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="brand")
      */
     private $products;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $name;
+
     public function __construct()
     {
-        $this->name = new ArrayCollection();
+        //$this->name = new ArrayCollection();
         $this->products = new ArrayCollection();
     }
 
@@ -39,14 +47,19 @@ class Brand
         return $this->id;
     }
 
+    /*
     /**
      * @return Collection|Category[]
      */
+
+    /*
     public function getName(): Collection
     {
         return $this->name;
     }
+    */
 
+    /*
     public function addName(Category $name): self
     {
         if (!$this->name->contains($name)) {
@@ -55,7 +68,8 @@ class Brand
 
         return $this;
     }
-
+    */
+    /*
     public function removeName(Category $name): self
     {
         if ($this->name->contains($name)) {
@@ -64,6 +78,8 @@ class Brand
 
         return $this;
     }
+    */
+
 
     /**
      * @return Collection|Product[]
@@ -92,6 +108,18 @@ class Brand
                 $product->setBrand(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
 
         return $this;
     }
