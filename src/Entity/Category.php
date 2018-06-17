@@ -47,8 +47,9 @@ class Category
     private $brands;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=255)
      */
+    //, unique=true
     private $slug;
 
     public function __construct()
