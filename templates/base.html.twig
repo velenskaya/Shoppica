@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en" xml:lang="en" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
     {% block meta %}
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>{% block title %}Your Store{% endblock %}</title>
     <meta name="description" content="My Store" />
@@ -12,9 +13,12 @@
     <link rel="stylesheet" type="text/css" href="stylesheet/ie.css" media="screen" />
     <![endif]-->
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/shoppica.js"></script>
+    {% block javascript %}
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/shoppica.js"></script>
+    {% endblock %}
+
     {% endblock %}
 </head>
 
@@ -253,6 +257,17 @@
     <!--     I N T R O          -->
     <!-- ********************** -->
     {% block intro %}
+        <div id="intro">
+            <div id="intro_wrap">
+                <div class="container_12">
+                    <div id="breadcrumbs" class="grid_12">
+                        <a href="index.html">Home</a>
+                        <a href="cart.html">sfdsfd</a>
+                    </div>
+                    <h1>Shopping Cart (0.00kg)</h1>
+                </div>
+            </div>
+        </div>
     {% endblock %}
     <!-- end of intro -->
 

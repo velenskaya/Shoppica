@@ -16,26 +16,21 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/list", name="list")
-     */
-    public function listProducts()
-    {
-        return $this->render('main/list.html.twig');
-    }
-
-    /**
-     * @Route("/listgrid", name="listgrid")
-     */
-    public function listgridProducts()
-    {
-        return $this->render('main/listgrid.html.twig');
-    }
-
-    /**
      * @Route("/contacts", name="contacts")
      */
     public function contacts()
     {
         return $this->render('main/contacts.html.twig');
     }
+
+
+
+    /**
+     * @Route("/sitemap", name="sitemap")
+     */
+    public function sitemap()
+    {
+        return $this->render('main/sitemap.html.twig');
+    }
+
 }

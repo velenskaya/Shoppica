@@ -8,12 +8,19 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class UserController extends Controller
 {
     /**
-     * @Route("/user", name="user")
+     * @Route("/login", name="user")
      */
-    public function index()
+    public function login()
     {
-        return $this->render('user/index.html.twig', [
-            'controller_name' => 'UserController',
-        ]);
+        return $this->render('user/login.html.twig');
     }
+
+    /**
+     * @Route("/forms", name="user")
+     */
+    public function forms()
+    {
+        return $this->render('user/forms.html.twig');
+    }
+
 }

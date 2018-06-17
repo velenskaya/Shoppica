@@ -10,10 +10,8 @@ class CheckoutController extends Controller
     /**
      * @Route("/checkout", name="checkout")
      */
-    public function index()
+    public function checkout()
     {
-        return $this->render('checkout/index.html.twig', [
-            'controller_name' => 'CheckoutController',
-        ]);
+        return $this->render('checkout/checkout.html.twig');
     }
 }

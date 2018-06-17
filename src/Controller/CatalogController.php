@@ -22,5 +22,29 @@ class CatalogController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/list", name="list")
+     */
+    public function listProducts()
+    {
+        return $this->render('catalog/list.html.twig');
+    }
+
+    /**
+     * @Route("/listgrid", name="listgrid")
+     */
+    public function listgridProducts()
+    {
+        return $this->render('catalog/listgrid.html.twig');
+    }
+
+    /**
+     * @Route("/singleproduct", name="singleproduct")
+     */
+    public function singelPoduct()
+    {
+        return $this->render('catalog/singleproduct.html.twig');
+    }
+
 
 }
