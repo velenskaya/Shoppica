@@ -16,11 +16,11 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/about", name="about")
+     * @Route("/list", name="about")
      */
-    public function about()
+    public function listProducts()
     {
-        return $this->render('main/about.html.twig');
+        return $this->render('main/list.html.twig');
     }
 
     /**
