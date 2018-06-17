@@ -1,21 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Your Store{% endblock %}
-
-{% block intro %}
-    <div id="intro">
-        <div id="intro_wrap">
-            <div class="container_12">
-                <div id="breadcrumbs" class="grid_12">
-                    <a href="">Home</a>
-                    &gt;
-                    <a href="">Clothing</a>
-                </div>
-                <h1>Clothing</h1>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+{% block title %}Products{% endblock %}
 
 {% block content %}
     <div id="content" class="container_12">
@@ -49,90 +34,106 @@
                 </div>
                 <div id="view_mode" class="s_nav">
                     <ul class="clearfix">
-                        <li id="view_grid"><a href="listing_2.html"><span class="s_icon"></span>Grid</a></li>
-                        <li id="view_list" class="s_selected"><a href="listing_1.html"><span class="s_icon"></span>List</a></li>
+                        <li id="view_grid" class="s_selected"><a href="listing_2.html"><span class="s_icon"></span>Grid</a></li>
+                        <li id="view_list"><a href="listing_1.html"><span class="s_icon"></span>List</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="clear"></div>
 
-            <div class="s_listing s_list_view clearfix">
+            <div class="s_listing s_grid_view clearfix">
 
-                <div class="s_item clearfix">
-                    <div class="grid_3 alpha"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_1.jpg" title="Leica M7" alt="Leica M7" /></a> </div>
-                    <div class="grid_6 omega">
-                        <h3><a href="product.html">Leica M7</a></h3>
-                        <p class="s_model">Product 4</p>
-                        <p class="s_price s_promo_price"><span class="s_old_price"><span class="s_currency s_before">£</span>940.00</span> <span class="s_currency s_before">£</span>822.50</p>
-                        <p class="s_description">Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&#39;s newly announced D3 profes...</p>
-                        <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
-                    </div>
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_1.jpg" title="Samsung SyncMaster 941BW" alt="Samsung SyncMaster 941BW" /></a>
+                    <h3><a href="product.html">Samsung SyncMaster 941BW</a></h3>
+                    <p class="s_model">Product 6</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>387.42</p>
+                    <p class="s_rating s_rating_5"><span style="width: 60%;" class="s_percent"></span></p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                </div>
+
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_2.jpg" title="Casual brownies" alt="Casual brownies" /></a>
+                    <h3><a href="product.html">Casual brownies</a></h3>
+                    <p class="s_model">Product 7</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>193.71</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                </div>
+
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_3.jpg" title="White football trainers" alt="White football trainers" /></a>
+                    <h3><a href="product.html">White football trainers</a></h3>
+                    <p class="s_model">Product 8</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>193.71</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                 </div>
 
                 <div class="clear"></div>
 
-                <div class="s_item clearfix">
-                    <div class="grid_3 alpha"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_2.jpg" title="Canon Digital Ixus 200 IS" alt="Canon Digital Ixus 200 IS" /></a> </div>
-                    <div class="grid_6 omega">
-                        <h3><a href="product.html">Canon Digital Ixus 200 IS</a></h3>
-                        <p class="s_model">Product 7</p>
-                        <p class="s_price"><span class="s_currency s_before">£</span>117.50</p>
-                        <p class="s_description">Born to be worn. Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion stateme...</p>
-                        <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
-                    </div>
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_4.jpg" title="Brown moccasins" alt="Brown moccasins" /></a>
+                    <h3><a href="product.html">Brown moccasins</a></h3>
+                    <p class="s_model">Product 9</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>193.71</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                </div>
+
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_5.jpg" title="Stylish high heels " alt="Stylish high heels " /></a>
+                    <h3><a href="product.html">Stylish high heels </a></h3>
+                    <p class="s_model">product 11</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>195.65</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                </div>
+
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_6.jpg" title="Summer Pink" alt="Summer Pink" /></a>
+                    <h3><a href="product.html">Summer Pink</a></h3>
+                    <p class="s_model">Product 14</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>968.55</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                 </div>
 
                 <div class="clear"></div>
 
-                <div class="s_item clearfix">
-                    <div class="grid_3 alpha"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_3.jpg" title="Casio Exilim Zoom" alt="Casio Exilim Zoom" /></a> </div>
-                    <div class="grid_6 omega">
-                        <h3><a href="product.html">Casio Exilim Zoom</a></h3>
-                        <p class="s_model">Product 7</p>
-                        <p class="s_price"><span class="s_currency s_before">£</span>117.50</p>
-                        <p class="s_description">Born to be worn. Clip on the worlds most wearable music player and take up to 240 songs with you anywhere. Choose from five colors including four new hues to make your musical fashion stateme...</p>
-                        <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
-                    </div>
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_7.jpg" title="Sony VAIO" alt="Sony VAIO" /></a>
+                    <h3><a href="product.html">Sony VAIO</a></h3>
+                    <p class="s_model">Product 19</p>
+                    <p class="s_price s_promo_price"><span class="s_old_price"><span class="s_currency s_before">$</span>1,937.10</span> <span class="s_currency s_before">$</span>1,743.39</p>
+                    <p class="s_rating s_rating_5"><span style="width: 100%;" class="s_percent"></span></p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                </div>
+
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_8.jpg" title="iPod Classic" alt="iPod Classic" /></a>
+                    <h3><a href="product.html">iPod Classic</a></h3>
+                    <p class="s_model">product 20</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>193.71</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
+                </div>
+
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_9.jpg" title="Black&amp;White - classy sneakers" alt="Black&amp;White - classy sneakers" /></a>
+                    <h3><a href="product.html">Black&amp;White - classy sneakers</a></h3>
+                    <p class="s_model">Product 8</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>193.71</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                 </div>
 
                 <div class="clear"></div>
 
-                <div class="s_item clearfix">
-                    <div class="grid_3 alpha"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_4.jpg" title="Samsung P200" alt="Samsung P200" /></a> </div>
-                    <div class="grid_6 omega">
-                        <h3><a href="product.html">Samsung P200</a></h3>
-                        <p class="s_model">Product 6</p>
-                        <p class="s_price"><span class="s_currency s_before">£</span>235.00</p>
-                        <p class="s_description">Imagine the advantages of going big without slowing down. The big 19&quot; 941BW monitor combines wide aspect ratio with fast pixel response time, for bigger images, more room to work and crisp mot...</p>
-                        <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
-                    </div>
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_10.jpg" title="Adidas Gazella" alt="Adidas Gazella" /></a>
+                    <h3><a href="product.html">Adidas Gazella</a></h3>
+                    <p class="s_model">Product 6</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>387.42</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                 </div>
 
-                <div class="clear"></div>
-
-                <div class="s_item clearfix">
-                    <div class="grid_3 alpha"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_5.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a> </div>
-                    <div class="grid_6 omega">
-                        <h3><a href="product.html">Panasonic Lumix</a></h3>
-                        <p class="s_model">Product 4</p>
-                        <p class="s_price"><span class="s_currency s_before">£</span>94.00</p>
-                        <p class="s_description"> Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand new technologies with advanced features inherited from Nikon&#39;s newly announced D3 profes...</p>
-                        <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
-                    </div>
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_1.jpg" title="Classy shoes" alt="Classy shoes" /></a>
+                    <h3><a href="product.html">Classy shoes</a></h3>
+                    <p class="s_model">Product 19</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>1,937.10</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                 </div>
 
-                <div class="clear"></div>
-
-                <div class="s_item clearfix last">
-                    <div class="grid_3 alpha"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_6.jpg" title="Sony Cyber Shot S1000" alt="Sony Cyber Shot S1000" /></a> </div>
-                    <div class="grid_6 omega">
-                        <h3><a href="product.html">Sony Cyber Shot S1000</a></h3>
-                        <p class="s_model">Product 8</p>
-                        <p class="s_price"><span class="s_currency s_before">£</span>117.50</p>
-                        <p class="s_description"> Heading Proin ut ornare risus. Sed tristique, massa vel rhoncus tempus, ligula quam ultrices enim, varius euismod neque erat quis sapien. Curabitur eget quam quis magna ultricies aliquam. Ut...</p>
-                        <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
-                    </div>
+                <div class="s_item grid_3"> <a class="s_thumb" href="product.html"><img src="images/dummy/pic_2.jpg" title="Red classic" alt="Red classic" /></a>
+                    <h3><a href="product.html">Red classic</a></h3>
+                    <p class="s_model">Product 14</p>
+                    <p class="s_price"><span class="s_currency s_before">$</span>968.55</p>
+                    <a class="s_button_add_to_cart" href="product.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                 </div>
 
                 <div class="clear"></div>
@@ -140,7 +141,8 @@
             </div>
 
             <div class="pagination">
-                <div class="results">Showing 1 to 6 of 6 (1 Pages)</div>
+                <div class="links"> <b>1</b> <a href="">2</a> <a href="">&gt;</a> <a href="">&gt;|</a> </div>
+                <div class="results">Showing 1 to 12 of 20 (2 Pages)</div>
             </div>
 
         </div>
@@ -313,7 +315,6 @@
             </div>
 
         </div>
-
 
     </div>
 {% endblock %}
