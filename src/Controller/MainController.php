@@ -16,7 +16,7 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/list", name="about")
+     * @Route("/list", name="list")
      */
     public function listProducts()
     {
@@ -24,7 +24,15 @@ class MainController extends Controller
     }
 
     /**
-     * @Route("/contacts", name="contact")
+     * @Route("/listgrid", name="listgrid")
+     */
+    public function listgridProducts()
+    {
+        return $this->render('main/listgrid.html.twig');
+    }
+
+    /**
+     * @Route("/contacts", name="contacts")
      */
     public function contacts()
     {
