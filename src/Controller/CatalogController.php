@@ -27,7 +27,9 @@ class CatalogController extends Controller
      */
     public function listProducts()
     {
-        return $this->render('catalog/list.html.twig');
+        return $this->render('catalog/list.html.twig',[
+            'title' => 'Список всех продуктов списком',
+        ]);
     }
 
     /**
@@ -35,7 +37,9 @@ class CatalogController extends Controller
      */
     public function listgridProducts()
     {
-        return $this->render('catalog/listgrid.html.twig');
+        return $this->render('catalog/listgrid.html.twig', [
+            'title' => 'Список всех продуктов сеткой',
+        ]);
     }
 
     /**
@@ -43,7 +47,9 @@ class CatalogController extends Controller
      */
     public function singelPoduct()
     {
-        return $this->render('catalog/singleproduct.html.twig');
+        return $this->render('catalog/singleproduct.html.twig', [
+            'title' => 'Один продукт',
+        ]);
     }
 
 

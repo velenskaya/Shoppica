@@ -12,6 +12,8 @@ class CheckoutController extends Controller
      */
     public function checkout()
     {
-        return $this->render('checkout/checkout.html.twig');
+        return $this->render('checkout/checkout.html.twig',[
+            'title' => 'Сheckout',
+        ]);
     }
 }

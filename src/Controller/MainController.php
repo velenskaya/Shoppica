@@ -12,7 +12,9 @@ class MainController extends Controller
      */
     public function index()
     {
-        return $this->render('main/index.html.twig');
+        return $this->render('main/index.html.twig',[
+            'title' => 'Главная',
+        ]);
     }
 
     /**
@@ -20,7 +22,9 @@ class MainController extends Controller
      */
     public function contacts()
     {
-        return $this->render('main/contacts.html.twig');
+        return $this->render('main/contacts.html.twig',[
+            'title' => 'Контакты',
+        ]);
     }
 
 
@@ -30,7 +34,9 @@ class MainController extends Controller
      */
     public function sitemap()
     {
-        return $this->render('main/sitemap.html.twig');
+        return $this->render('main/sitemap.html.twig',[
+            'title' => 'Карта сайта',
+        ]);
     }
 
 }
