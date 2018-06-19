@@ -31,7 +31,7 @@ class Category
     private $parent;
 
     /**
-     * @var ArrayCollection
+     * @var Collection
      * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="parent")
      */
     private $childs;
@@ -102,17 +102,17 @@ class Category
     }
 
     /**
-     * @return ArrayCollection|Category[]
+     * @return Collection|Category[]
      */
-    public function getChilds(): ArrayCollection
+    public function getChilds(): Collection
     {
         return $this->childs;
     }
 
     /**
-     * @param ArrayCollection $childs
+     * @param Collection $childs
      */
-    public function setChilds(ArrayCollection $childs): void
+    public function setChilds(Collection $childs): void
     {
         $this->childs = $childs;
     }

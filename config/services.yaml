@@ -2,6 +2,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    available_locales: ['%locale%', 'fr', 'de']
+#    available_locales: ['%locale%']
 
 services:
     # default configuration for services in *this* file

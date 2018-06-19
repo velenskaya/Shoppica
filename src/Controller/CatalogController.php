@@ -6,6 +6,7 @@ use App\Entity\Category;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class CatalogController extends Controller
 {
@@ -25,11 +26,12 @@ class CatalogController extends Controller
     /**
      * @Route("/list", name="list")
      */
-    public function listProducts()
+    public function listProducts(TranslatorInterface $translator)
     {
         return $this->render('catalog/list.html.twig',[
-            'title' => 'Список всех продуктов списком',
+            'title' => $translator->trans('List of Product'),
             'name' => 'Clothing',
+            'categories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ]);
     }
 
