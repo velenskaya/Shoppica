@@ -14,6 +14,7 @@ class CheckoutController extends Controller
     {
         return $this->render('checkout/checkout.html.twig',[
             'title' => 'Сheckout',
+            'name' => 'Checkout',
         ]);
     }
 }

@@ -14,16 +14,18 @@ class UserController extends Controller
     {
         return $this->render('user/login.html.twig',[
             'title' => 'Вход',
+            'name' => 'Basket',
         ]);
     }
 
     /**
-     * @Route("/forms", name="user")
+     * @Route("/forms", name="forms")
      */
     public function forms()
     {
         return $this->render('user/forms.html.twig',[
             'title' => 'Форма',
+            'name' => 'Basket',
         ]);
     }
 

@@ -29,6 +29,7 @@ class CatalogController extends Controller
     {
         return $this->render('catalog/list.html.twig',[
             'title' => 'Список всех продуктов списком',
+            'name' => 'Clothing',
         ]);
     }
 
@@ -39,6 +40,7 @@ class CatalogController extends Controller
     {
         return $this->render('catalog/listgrid.html.twig', [
             'title' => 'Список всех продуктов сеткой',
+            'name' => 'Clothing',
         ]);
     }
 
@@ -49,6 +51,7 @@ class CatalogController extends Controller
     {
         return $this->render('catalog/singleproduct.html.twig', [
             'title' => 'Один продукт',
+            'name' => 'Clothing',
         ]);
     }
 

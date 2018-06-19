@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block javascript %}
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/shoppica.js"></script>
+<script type="text/javascript" src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/shoppica.js') }}"></script>
 
-<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.min.js"></script>
+<script type="text/javascript" src="{{ asset('http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8/jquery.validate.min.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
 

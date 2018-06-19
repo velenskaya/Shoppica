@@ -24,6 +24,7 @@ class MainController extends Controller
     {
         return $this->render('main/contacts.html.twig',[
             'title' => 'Контакты',
+            'name' => 'Contact Us',
         ]);
     }
 
@@ -36,6 +37,7 @@ class MainController extends Controller
     {
         return $this->render('main/sitemap.html.twig',[
             'title' => 'Карта сайта',
+            'name' => 'Sitemap',
         ]);
     }
 

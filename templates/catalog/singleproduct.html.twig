@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block javascript %}
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery/jquery.prettyPhoto.js"></script>
-    <script type="text/javascript" src="js/shoppica.js"></script>
+<script type="text/javascript" src="{{ asset('http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery/jquery.prettyPhoto.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/shoppica.js') }}"></script>
     <script type="text/javascript">
 
     $(document).ready(function() {
@@ -29,7 +29,7 @@
 
         <div id="product" class="grid_12">
             <div id="product_images" class="grid_4 alpha">
-                <a id="product_image_preview" rel="prettyPhoto[gallery]" href="images/dummy/pic_1.jpg"><img id="image" src="images/dummy/pic_1.jpg" title="Leica M7" alt="Leica M7" /></a>
+                <a id="product_image_preview" rel="prettyPhoto[gallery]" href="images/dummy/pic_1.jpg"><img id="image" src="{{ asset('images/dummy/pic_1.jpg') }}" title="Leica M7" alt="Leica M7" /></a>
             </div>
             <div id="product_info" class="grid_4">
                 <p class="s_price s_promo_price"><span class="s_old_price">940.00<span class="s_currency s_after"> eur</span></span> 822.50<span class="s_currency s_after"> eur</span></p>
@@ -53,7 +53,7 @@
                         <a class="addthis_button_tweet"></a>
                         <a class="addthis_counter addthis_pill_style"></a>
                     </div>
-                    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4de0eff004042e7a"></script>
+                    <script type="text/javascript" src="{{ asset('http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4de0eff004042e7a') }}"></script>
                     <!-- AddThis Button END -->
                 </div>
             </div>
@@ -141,8 +141,8 @@
                         <a class="s_button_1 s_main_color_bgr"><span class="s_text">Continue</span></a> <span class="clear"></span> </div>
                     <div id="product_gallery">
                         <ul class="s_thumbs clearfix">
-                            <li><a class="s_thumb" href="images/dummy/pic_2.jpg" title="Leica M7" rel="prettyPhoto[gallery]"><img src="images/dummy/pic_2.jpg" width="120" title="Leica M7" alt="Leica M7" /></a></li>
-                            <li><a class="s_thumb" href="images/dummy/pic_3.jpg" title="Leica M7" rel="prettyPhoto[gallery]"><img src="images/dummy/pic_3.jpg" width="120" title="Leica M7" alt="Leica M7" /></a></li>
+                            <li><a class="s_thumb" href="{{ asset('images/dummy/pic_2.jpg') }}" title="Leica M7" rel="prettyPhoto[gallery]"><img src="{{ asset('images/dummy/pic_2.jpg') }}" width="120" title="Leica M7" alt="Leica M7" /></a></li>
+                            <li><a class="s_thumb" href="{{ asset('images/dummy/pic_3.jpg') }}" title="Leica M7" rel="prettyPhoto[gallery]"><img src="{{ asset('images/dummy/pic_3.jpg') }}" width="120" title="Leica M7" alt="Leica M7" /></a></li>
                         </ul>
                     </div>
                 </div>
@@ -153,28 +153,28 @@
                 <div class="clear"></div>
                 <div class="s_grid_view s_listing clearfix">
                     <div class="s_item grid_3">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_4.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_4.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_3">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_5.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_5.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_3">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_6.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_6.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_3">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_7.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_7.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
@@ -189,42 +189,42 @@
                 <div class="clear"></div>
                 <div class="s_grid_view s_listing clearfix">
                     <div class="s_item grid_2">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_8.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_8.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_2">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_9.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_9.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_2">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_10.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_10.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_2">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_1.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_1.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_2">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_2.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_2.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
                         <a class="s_button_add_to_cart" href="cart.html"><span class="s_icon_16"><span class="s_icon"></span>Add to Cart</span></a>
                     </div>
                     <div class="s_item grid_2">
-                        <a class="s_thumb" href="product.html"><img src="images/dummy/pic_3.jpg" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
+                        <a class="s_thumb" href="product.html"><img src="{{ asset('images/dummy/pic_3.jpg') }}" title="Panasonic Lumix" alt="Panasonic Lumix" /></a>
                         <h3><a href="product.html">Panasonic Lumix</a></h3>
                         <p class="s_model">Product 4</p>
                         <p class="s_price">94.00<span class="s_currency s_after"> eur</span></p>
