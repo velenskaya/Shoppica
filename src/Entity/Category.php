@@ -185,7 +185,7 @@ class Category
 
         return $this;
     }
-
+ */
     public function getSlug(): ?string
     {
         return $this->slug;
@@ -197,5 +197,5 @@ class Category
 
         return $this;
     }
-    */
+
 }

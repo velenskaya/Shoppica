@@ -13,7 +13,7 @@ class ShoppingCartController extends Controller
     public function cart()
     {
         return $this->render('shopping_cart/cart.html.twig',[
-            'title' => 'Корзина',
+            'title' => 'Basket',
             'name' => 'Basket',
         ]);
     }
@@ -24,7 +24,7 @@ class ShoppingCartController extends Controller
     public function invoice()
     {
         return $this->render('shopping_cart/invoice.html.twig',[
-            'title' => 'Счет',
+            'title' => 'Invoice',
             'name' => 'Static page',
         ]);
     }
@@ -35,7 +35,7 @@ class ShoppingCartController extends Controller
     public function orders()
     {
         return $this->render('shopping_cart/orders.html.twig',[
-            'title' => 'Счета к оплате',
+            'title' => 'Invoice',
             'name' => 'Basket',
         ]);
     }

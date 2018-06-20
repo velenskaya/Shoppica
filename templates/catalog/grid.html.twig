@@ -154,29 +154,46 @@
             </div>
 
             <div id="categories_module" class="s_box">
-                <h2>Categories</h2>
+                <h2>{{ 'Categories'}}</h2>
                 <div class="s_list_1">
                     <ul>
-                        <li>
-                            <a href="listing_1.html"><b>Electronics</b></a>
-                            <ul>
-                                <li><a href="listing_1.html">Digital Cameras</a></li>
-                                <li><a href="listing_1.html">Home Audio</a></li>
-                                <li><a href="listing_1.html">Home Cinema</a></li>
-                                <li><a href="listing_1.html">Cell Phones</a></li>
-                                <li><a href="listing_1.html">MP3 Players</a></li>
-                                <li><a href="listing_1.html">Car-Audio</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="listing_1.html">Computers</a></li>
-                        <li><a href="listing_1.html">Clothing</a></li>
-                        <li><a href="listing_1.html">Shoes</a></li>
-                        <li><a href="listing_1.html">Gifts</a></li>
-                        <li><a href="listing_1.html">At home</a></li>
-                        <li><a href="listing_1.html">Health</a></li>
-                        <li><a href="listing_1.html">Jewellery</a></li>
-                        <li><a href="listing_1.html">Books</a></li>
-                    </ul>
+                        <ul>
+                            {% for category in categories %}
+                            <li>
+                                <a href="{{ path('list.html.twig') }}"><b>{{ category.name }}</b></a>
+                                {% if category.childs | length > 0 %}
+                                    <ul>
+                                        {% for child in category.childs %}
+                                        <li><a href="{{ path('list.html.twig') }}">{{ child.name }}</a>
+                                            {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            <li>
+                                {% endfor %}
+                        </ul>
+                    </ul>>
+
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="listing_1.html"><b>Electronics</b></a>#}
+                            {#<ul>#}
+                                {#<li><a href="listing_1.html">Digital Cameras</a></li>#}
+                                {#<li><a href="listing_1.html">Home Audio</a></li>#}
+                                {#<li><a href="listing_1.html">Home Cinema</a></li>#}
+                                {#<li><a href="listing_1.html">Cell Phones</a></li>#}
+                                {#<li><a href="listing_1.html">MP3 Players</a></li>#}
+                                {#<li><a href="listing_1.html">Car-Audio</a></li>#}
+                            {#</ul>#}
+                        {#</li>#}
+                        {#<li><a href="listing_1.html">Computers</a></li>#}
+                        {#<li><a href="listing_1.html">Clothing</a></li>#}
+                        {#<li><a href="listing_1.html">Shoes</a></li>#}
+                        {#<li><a href="listing_1.html">Gifts</a></li>#}
+                        {#<li><a href="listing_1.html">At home</a></li>#}
+                        {#<li><a href="listing_1.html">Health</a></li>#}
+                        {#<li><a href="listing_1.html">Jewellery</a></li>#}
+                        {#<li><a href="listing_1.html">Books</a></li>#}
+                    {#</ul>#}
                 </div>
             </div>
 

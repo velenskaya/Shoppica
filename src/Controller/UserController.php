@@ -13,7 +13,7 @@ class UserController extends Controller
     public function login()
     {
         return $this->render('user/login.html.twig',[
-            'title' => 'Вход',
+            'title' => 'Entrance',
             'name' => 'Basket',
         ]);
     }
@@ -24,7 +24,7 @@ class UserController extends Controller
     public function forms()
     {
         return $this->render('user/forms.html.twig',[
-            'title' => 'Форма',
+            'title' => 'Form',
             'name' => 'Basket',
         ]);
     }

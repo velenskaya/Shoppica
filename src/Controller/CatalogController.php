@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Entity\Product;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -24,25 +25,36 @@ class CatalogController extends Controller
     }
 
     /**
-     * @Route("/list", name="list")
+     * @Route("/list/{slugCategory}", name="list", defaults={"slugCategory": null})
+     * @ParamConverter("category", options={"mapping": {"slugCategory": "slug"}})
      */
-    public function listProducts(TranslatorInterface $translator)
+    public function listProducts(Category $category=null)
     {
+
+        if ($category) {
+            $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['category' => $category]);
+        } else {
+            $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        }
+
         return $this->render('catalog/list.html.twig',[
-            'title' => $translator->trans('List of Product'),
+            'title' => 'List of Product',
+            'head' => $category ? $category->getName() : 'List of Product',
             'name' => 'Clothing',
+            'products' => $products,
             'categories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ]);
     }
 
     /**
-     * @Route("/listgrid", name="listgrid")
+     * @Route("/grid", name="listgrid")
      */
-    public function listgridProducts()
+    public function gridProducts()
     {
-        return $this->render('catalog/listgrid.html.twig', [
-            'title' => 'Список всех продуктов сеткой',
+        return $this->render('catalog/grid.html.twig', [
+            'title' => 'List of all products',
             'name' => 'Clothing',
+            'categories' => $this->getDoctrine()->getRepository(Category::class)->findBy(['parent' => null])
         ]);
     }
 
@@ -52,7 +64,7 @@ class CatalogController extends Controller
     public function singelPoduct()
     {
         return $this->render('catalog/singleproduct.html.twig', [
-            'title' => 'Один продукт',
+            'title' => 'One product',
             'name' => 'Clothing',
         ]);
     }

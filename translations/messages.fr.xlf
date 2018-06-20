@@ -6,6 +6,10 @@
                 <source>List of Product</source>
                 <target>Liste de produit</target>
             </trans-unit>
+            <trans-unit id="categories">
+                 <source>Categories</source>
+                 <target>Categories</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
