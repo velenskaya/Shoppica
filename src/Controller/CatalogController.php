@@ -30,9 +30,11 @@ class CatalogController extends Controller
      */
     public function listProducts(Category $category=null)
     {
-
         if ($category) {
-            $products = $this->getDoctrine()->getRepository(Product::class)->findBy(['category' => $category]);
+            $products = $this
+                ->getDoctrine()
+                ->getRepository(Product::class)
+                ->findBy(['category' => array_merge($category->getChilds()->toArray(), [$category])]);
         } else {
             $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
         }
@@ -59,15 +61,20 @@ class CatalogController extends Controller
     }
 
     /**
-     * @Route("/singleproduct", name="singleproduct")
+     * @Route("/product/{id}", name="show_singleproduct")
      */
-    public function singelPoduct()
+    public function showSingelPoduct($id)
     {
+        $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
+        if (!$product) {
+            throw $this->createNotFoundException(
+                'No product found for id ' . $id
+            );
+        }
         return $this->render('catalog/singleproduct.html.twig', [
-            'title' => 'One product',
+            'title' => $product->getName(),
             'name' => 'Clothing',
         ]);
     }
-
 
 }

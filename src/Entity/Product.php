@@ -33,9 +33,9 @@ class Product
     private $category;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
-    //, unique=true
+
     private $slug;
 
     /**

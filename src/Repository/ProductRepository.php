@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -17,6 +18,23 @@ class ProductRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Product::class);
+    }
+
+    /**
+     * @param Category $category
+     * @return Product[]
+     */
+    public function getProductsByCategory(Category $category)
+    {
+        $categories = array_merge([$category], $category->getChilds()->toArray());
+
+        return $this->createQueryBuilder('p')
+            ->where('p.category IN (:categories)')
+            ->setParameter('categories', $categories)
+            ->orderBy('p.id', 'ASC')
+            ->setFirstResult()
+            ->getQuery()
+            ->getResult();
     }
 
 //    /**
