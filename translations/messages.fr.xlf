@@ -10,6 +10,10 @@
                  <source>Categories</source>
                  <target>Categories</target>
             </trans-unit>
+            <trans-unit id="sitemap">
+                <source>Site Map</source>
+                <target>Carte du site</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

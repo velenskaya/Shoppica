@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Brand;
 use App\Entity\Category;
 use App\Entity\Product;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Translation\TranslatorInterface;
@@ -28,16 +30,18 @@ class CatalogController extends Controller
      * @Route("/list/{slugCategory}", name="list", defaults={"slugCategory": null})
      * @ParamConverter("category", options={"mapping": {"slugCategory": "slug"}})
      */
-    public function listProducts(Category $category=null)
+    public function listProducts(Category $category=null, Request $request)
     {
-        if ($category) {
-            $products = $this
+        $page = $request->get('page', 1);
+
+        $brandId = $request->get('brand');
+
+        $brand = $this->getDoctrine()->getManager()->find(Brand::class, $brandId);
+
+        $products = $this
                 ->getDoctrine()
                 ->getRepository(Product::class)
-                ->findBy(['category' => array_merge($category->getChilds()->toArray(), [$category])]);
-        } else {
-            $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
-        }
+                ->getProductsByFilter($category, $brand, $page);
 
         return $this->render('catalog/list.html.twig',[
             'title' => 'List of Product',
@@ -62,7 +66,7 @@ class CatalogController extends Controller
 
     /**
      * @Route("/product/{id}", name="show_singleproduct")
-     */
+    */
     public function showSingelPoduct($id)
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
@@ -74,7 +78,54 @@ class CatalogController extends Controller
         return $this->render('catalog/singleproduct.html.twig', [
             'title' => $product->getName(),
             'name' => 'Clothing',
+            'discription'=>$product->getDiscription(),
         ]);
     }
+//
+//    /**
+//     * @Route("/product/{slug}", name="show_singleproduct")
+//     * @ParamConverter("product", )
+//     */
+//    public function showSingelPoduct(Product $product)
+//    {
+//       return $this->render('catalog/singleproduct.html.twig', [
+//            'title' => $product->getName(),
+//            'name' => 'Clothing',
+//            'discription'=>$product->getDiscription(),
+//        ]);
+//
+//    }
+
+//    /**
+//     * @Route("/product/{slug}", name="show_singleproduct")
+//     */
+//    public function showSingelPoduct($slug)
+//    {
+//        $product = $this->getDoctrine()->getRepository(Product::class)->findOneBy(['slug' => $slug]);
+//        if (!$product) {
+//            throw $this->createNotFoundException(
+//                'No product found for slug ' . $slug
+//            );
+//        }
+//        return $this->render('catalog/singleproduct.html.twig', [
+//            'title' => $product->getName(),
+//            'name' => 'Clothing',
+//            'discription'=>$product->getDiscription(),
+//        ]);
+//    }
+//
+//    /**
+//     * @Route("/product/{id}/{slug}/{tag}", name="show_singleproduct")
+//     * @ParamConverter("product", options={"mapping": {"id": "id", "slug": "slug"}})
+//     */
+//    public function showSingelPoduct( Product $product, $tag)
+//    {
+//        return $this->render('catalog/singleproduct.html.twig', [
+//            'title' => $product->getName(),
+//            'name' => $tag,
+//            'discription'=>$product->getDiscription(),
+//        ]);
+
+//    }
 
 }

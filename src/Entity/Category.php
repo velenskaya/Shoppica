@@ -41,12 +41,6 @@ class Category
      */
     private $products;
 
-    /*/**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Brand", mappedBy="name")
-     */
-
-    //private $brands;
-
     /**
      * @ORM\Column(type="string", length=255, unique=true)
      */
@@ -155,37 +149,7 @@ class Category
 
         return $this;
     }
-    /*
-    /**
-     * @return Collection|Brand[]
-     */
 
-    /*
-    public function getBrands(): Collection
-    {
-        return $this->brands;
-    }
-
-    public function addBrand(Brand $brand): self
-    {
-        if (!$this->brands->contains($brand)) {
-            $this->brands[] = $brand;
-            $brand->addName($this);
-        }
-
-        return $this;
-    }
-
-    public function removeBrand(Brand $brand): self
-    {
-        if ($this->brands->contains($brand)) {
-            $this->brands->removeElement($brand);
-            $brand->removeName($this);
-        }
-
-        return $this;
-    }
- */
     public function getSlug(): ?string
     {
         return $this->slug;

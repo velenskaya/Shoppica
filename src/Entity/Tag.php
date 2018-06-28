@@ -7,9 +7,9 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\BrandRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\TagRepository")
  */
-class Brand
+class Tag
 {
     /**
      * @ORM\Id()
@@ -19,14 +19,14 @@ class Brand
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Product", mappedBy="brand")
+     * @ORM\Column(type="string", length=255)
      */
-    private $products;
+    private $title;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\ManyToMany(targetEntity="App\Entity\Product", mappedBy="tags")
      */
-    private $name;
+    private $products;
 
     public function __construct()
     {
@@ -36,6 +36,18 @@ class Brand
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
     }
 
     /**
@@ -50,7 +62,7 @@ class Brand
     {
         if (!$this->products->contains($product)) {
             $this->products[] = $product;
-            $product->setBrand($this);
+            $product->addTag($this);
         }
 
         return $this;
@@ -60,23 +72,8 @@ class Brand
     {
         if ($this->products->contains($product)) {
             $this->products->removeElement($product);
-            // set the owning side to null (unless already changed)
-            if ($product->getBrand() === $this) {
-                $product->setBrand(null);
-            }
+            $product->removeTag($this);
         }
-
-        return $this;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
 
         return $this;
     }

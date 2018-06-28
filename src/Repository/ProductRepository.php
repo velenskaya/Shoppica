@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Brand;
 use App\Entity\Category;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -22,17 +23,36 @@ class ProductRepository extends ServiceEntityRepository
 
     /**
      * @param Category $category
+     * @param Brand $brand
+     * @param int $page
+     * @param int $limitPerPage
      * @return Product[]
      */
-    public function getProductsByCategory(Category $category)
-    {
-        $categories = array_merge([$category], $category->getChilds()->toArray());
+    public function getProductsByFilter(
+        Category $category = null,
+        Brand $brand = null,
+        int $page = 1,
+        int $limitPerPage = 3
+    ) {
+        if ($category) {
+            $categories = array_merge([$category], $category->getChilds()->toArray());
+        }
 
-        return $this->createQueryBuilder('p')
-            ->where('p.category IN (:categories)')
-            ->setParameter('categories', $categories)
-            ->orderBy('p.id', 'ASC')
-            ->setFirstResult()
+        $qb =  $this->createQueryBuilder('product');
+
+        if ($brand) {
+            $qb->andWhere('product.brand = :test');
+            $qb->setParameter('test', $brand);
+        }
+
+        if ($category) {
+            $qb->andWhere('product.category IN (:categories)');
+            $qb->setParameter('categories', $categories);
+        }
+
+        return $qb->orderBy('product.id', 'ASC')
+            ->setFirstResult(($page - 1) * $limitPerPage)
+            ->setMaxResults($limitPerPage)
             ->getQuery()
             ->getResult();
     }
